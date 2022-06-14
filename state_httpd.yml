@@ -53,12 +53,16 @@
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -n Nextcloud
       register: result
-        set_fact:
-          list_jsondsssssata: "{{ result.stdout | from_json }}"
+    - name: debug list stdout
+      set_fact:
+        list_jsondata: "{{ result.stdout | from_json }}"
 
+
+
+        
     - name: debug list stdout2
       debug:
-        msg: "{{ list_jsondsssssata.listautomationdeployedresourceresponse.automationdeployedresource[0].name }}"
+        msg: "{{ list_jsondata.listautomationdeployedresourceresponse.automationdeployedresource[0].id }}"
     
     # - debug: var=services_state.ansible_facts.services["httpd.service"].state
     # - debug: var=services_state.ansible_facts.services["mysqld.service"].state
@@ -69,6 +73,23 @@
     # 서비스 단위 전체 삭제
 
     # 서비스 단위별 상태 체크
+    - name: "Save State Httpd"
+      hosts: localhost
+      gather_facts: no
+      tasks:
+        - name: register resource
+          ansible.builtin.command: python2 /home/runner/mold_genie_api.py \
+            -c addDeployedUnitResource \
+            -ip 10.10.254.168 \
+            -ak ArfB-Y2r8LXfeWBmyNzpCgk1aOzg2s_O8PYXLX6uNRKg7lOWyd16nTshg4fsmEWs0dnEk8PIb0do0eczlysFpg \
+            -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
+	          -gid {{ list_jsondata.listautomationdeployedresourceresponse.automationdeployedresource[0].id }} \
+	          -vid a383f223-b0b3-492a-bd07-ae35312d431e \
+	          -un httpd \
+	          -s Running
+          register: result
+
+
 
     # 서비스 단위별 상태 등록
 
