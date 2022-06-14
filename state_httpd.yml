@@ -52,10 +52,10 @@
         -ak ArfB-Y2r8LXfeWBmyNzpCgk1aOzg2s_O8PYXLX6uNRKg7lOWyd16nTshg4fsmEWs0dnEk8PIb0do0eczlysFpg \
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -n Nextcloud
-      register: list
+      register: result
     - name: select value
       debug:
-        msg: "{{ list }}"
+        msg: "{{ result.json | list }}"
 
 
     # - debug: var=services_state.ansible_facts.services["httpd.service"].state
