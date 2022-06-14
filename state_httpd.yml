@@ -73,11 +73,11 @@
     # 서비스 단위 전체 삭제
 
     # 서비스 단위별 상태 체크
-    - name: "Save State Httpd"
+    - name: "Save State Httpd2"
       hosts: localhost
       gather_facts: no
       tasks:
-        - name: register resource
+        - name: register resource2
           ansible.builtin.command: "python2 /home/runner/mold_genie_api.py \
             -c addDeployedUnitResource \
             -ip 10.10.254.168 \
