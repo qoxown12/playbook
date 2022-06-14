@@ -1,4 +1,7 @@
 ---
+vars:
+  favcolor: Stopped
+
 - name: State Httpd
   hosts: localhost
   gather_facts: no
@@ -43,8 +46,6 @@
 ##### Save State Httpd #####
 - name: "Save State Httpd"
   hosts: localhost
-  vars:
-    favcolor: Stopped
   gather_facts: no
   tasks:
     - name: register resource
