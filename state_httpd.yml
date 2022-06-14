@@ -56,7 +56,21 @@
     - name: debug list stdout_lines
       debug:
         msg: "{{ list.stdout_lines }}"
+    - name: select value
+      debug:
+        msg: "{{ list.listautomationdeployedresourceresponse.automationdeployedresource[0].id }}"
 
 
     # - debug: var=services_state.ansible_facts.services["httpd.service"].state
     # - debug: var=services_state.ansible_facts.services["mysqld.service"].state
+
+
+    # 서비스 그룹 등록
+
+    # 서비스 단위 전체 삭제
+
+    # 서비스 단위별 상태 체크
+
+    # 서비스 단위별 상태 등록
+
+    # 서비스 그룹 상태 최종 업데이트
