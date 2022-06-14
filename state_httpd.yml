@@ -55,6 +55,7 @@
       register: result
       set_fact:
         list_jsondsssssata: "{{ result.stdout | from_json }}"
+        
     - name: debug list stdout2
       debug:
         msg: "{{ list_jsondsssssata.listautomationdeployedresourceresponse.automationdeployedresource[0].name }}"
