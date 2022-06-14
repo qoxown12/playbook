@@ -25,19 +25,6 @@
         hostname: "{{ vm.instances[0].nic[0].ipaddress }}"
         groups:
           - deployVmIp
-    
-    ##### State Httpd #####
-    - name: "State Httpd"
-      hosts: deployVmIp
-      gather_facts: no
-      vars:
-        - service: httpd.service
-      tasks:
-        - name: populate service facts
-          ansible.builtin.service_facts:
-        - debug: var=services[service]['status']
-        - debug:
-            msg: "{{ services[service]['status'] }}"
 
     ##### Save State Httpd #####
     - name: register resource
