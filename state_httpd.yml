@@ -55,7 +55,7 @@
       register: result
     - name: select value
       debug:
-        msg: "{{ result.json | list }}"
+        msg: "{{ result.stdout | from_json }}"
 
 
     # - debug: var=services_state.ansible_facts.services["httpd.service"].state
