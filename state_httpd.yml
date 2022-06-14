@@ -53,12 +53,6 @@
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -n Nextcloud
       register: list
-    - name: debug list stdout
-      debug:
-        msg: "{{ list.stdout }}"
-    - name: debug list stdout_lines
-      debug:
-        msg: "{{ list.stdout_lines }}"
     - name: select value
       debug:
         msg: "{{ list }}"
