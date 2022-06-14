@@ -67,7 +67,9 @@
         -ak ArfB-Y2r8LXfeWBmyNzpCgk1aOzg2s_O8PYXLX6uNRKg7lOWyd16nTshg4fsmEWs0dnEk8PIb0do0eczlysFpg \
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -gid {{ list_jsondata.listautomationdeployedresourceresponse.automationdeployedresource[0].id }} \
-        -s {{ status }}
+        -vid a383f223-b0b3-492a-bd07-ae35312d431e \
+        -un {{deployVmIp}} \
+        -s Running
       register: result2
 
 
