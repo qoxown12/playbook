@@ -13,6 +13,9 @@
         name: nextcloud-deploy-vm1
       delegate_to: localhost
       register: vm
+    - name: 배포 가상머신 ip 정보 수집
+      debug:
+        msg: "{{ vm }}"
 
     - name: 배포 가상머신 ip 정보 수집
       debug:
