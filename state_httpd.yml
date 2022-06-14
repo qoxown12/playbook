@@ -55,7 +55,7 @@
       register: result
     - name: select value
       debug:
-        msg: "{{ result.stdout.listautomationdeployedresourceresponse.automationdeployedresource[0].id | from_json }}"
+        msg: "{{{{ result.stdout | from_json }}.listautomationdeployedresourceresponse.automationdeployedresource[0].id}}"
 
     # - debug: var=services_state.ansible_facts.services["httpd.service"].state
     # - debug: var=services_state.ansible_facts.services["mysqld.service"].state
