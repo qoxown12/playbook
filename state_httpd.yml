@@ -28,7 +28,7 @@
           - deployVmIp
 
     - name: register resource
-      ansible.builtin.command: ssh-keyscan -t rsa {{ vm.instances[0].nic[0].ipaddress }} >> ~/.ssh/known_hosts
+      ansible.builtin.command: ssh-keyscan -t rsa {{ vm.instances[0].nic[0].ipaddress }} >> /home/runner/.ssh/known_hosts
     - name: register resource
       ansible.builtin.command: ssh root@{{ vm.instances[0].nic[0].ipaddress }} date
       register: date_result
