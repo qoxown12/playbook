@@ -30,6 +30,8 @@
     - name: register resource
       ansible.builtin.command: ssh root@{{ vm.instances[0].nic[0].ipaddress }} date
       register: date_result
+      
+    - name: 배포 가상머신 ip 정보 수집
       debug:
         msg: "{{ date_result }}"
 
