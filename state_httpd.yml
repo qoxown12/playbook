@@ -53,12 +53,8 @@
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -n Nextcloud
       register: result
-    - name: debug list stdout
       set_fact:
         list_jsondsssssata: "{{ result.stdout | from_json }}"
-    #   register: list_stdout
-    - debug:
-        var: list_jsondsssssata
     - name: debug list stdout2
       debug:
         msg: "{{ list_jsondsssssata.listautomationdeployedresourceresponse.automationdeployedresource[0].name }}"
