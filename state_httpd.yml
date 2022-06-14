@@ -1,9 +1,13 @@
 ---
+- name: debug list stdout
+  set_fact:
+    state: Running
 - name: State Httpd
   hosts: localhost
   gather_facts: no
   tasks:
-    ##### Deploy VirtualMachine #####
+##### Deploy VirtualMachine #####
+
     - name: 배포한 가상머신 정보 수집
       cs_instance_info:
         api_url: "{{ lookup('env', 'MOLD_API_URL') }}"
@@ -26,20 +30,27 @@
         groups:
           - deployVmIp
     
-      ##### State Httpd #####
-      - name: "State Httpd"
-        hosts: deployVmIp
-        gather_facts: no
-        vars:
-          - service: httpd.service
-        tasks:
-          - name: populate service facts
-            ansible.builtin.service_facts:
-          - debug: var=services[service]['status']
-          - debug:
-              msg: "{{ services[service]['status'] }}"
+##### State Httpd #####
+- name: "State Httpd"
+  hosts: deployVmIp
+  gather_facts: no
+  vars:
+    - service: httpd.service
+  tasks:
+    - name: populate service facts
+      ansible.builtin.service_facts:
+    - debug: var=services[service]['status']
+    - debug:
+        msg: "{{ services[service]['status'] }}"
+    - name: debug list stdout
+      set_fact:
+        status: "{{ services[service]['status'] }}"
 
-    ##### Save State Httpd #####
+##### Save State Httpd #####
+- name: "Save State Httpd"
+  hosts: localhost
+  gather_facts: no
+  tasks:
     - name: register resource
       ansible.builtin.command: python2 /home/runner/mold_genie_api.py \
         -c listAutomationDeployedResource \
@@ -48,7 +59,6 @@
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -n Nextcloud
       register: result
-
     - name: debug list stdout
       set_fact:
         list_jsondata: "{{ result.stdout | from_json }}"
@@ -60,7 +70,7 @@
         -ak ArfB-Y2r8LXfeWBmyNzpCgk1aOzg2s_O8PYXLX6uNRKg7lOWyd16nTshg4fsmEWs0dnEk8PIb0do0eczlysFpg \
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -gid {{ list_jsondata.listautomationdeployedresourceresponse.automationdeployedresource[0].id }} \
-        -s {{ favcolor }}
+        -s {{ state }}
       register: result2
 
 
