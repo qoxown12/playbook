@@ -1,5 +1,4 @@
 ---
-state_val: Running
 - name: State Httpd
   hosts: localhost
   gather_facts: no
