@@ -58,7 +58,7 @@
         msg: "{{ list.stdout_lines }}"
     - name: select value
       debug:
-        msg: "{{ list.listautomationdeployedresourceresponse.automationdeployedresource[0].id }}"
+        msg: "{{ list.stdout_lines.listautomationdeployedresourceresponse.automationdeployedresource[0].id }}"
 
 
     # - debug: var=services_state.ansible_facts.services["httpd.service"].state
