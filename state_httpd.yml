@@ -28,10 +28,7 @@
           - deployVmIp
 
     - name: register resource
-      command: ssh-keyscan -t rsa {{ vm.instances[0].nic[0].ipaddress }} >> ~/.ssh/known_hosts
-
-    - name: register resource
-      command: ssh root@{{ vm.instances[0].nic[0].ipaddress }} date
+      command: ssh-keyscan -t rsa {{ vm.instances[0].nic[0].ipaddress }} >> ~/.ssh/known_hosts | ssh root@{{ vm.instances[0].nic[0].ipaddress }} date
       register: date_result
 
     - name: 배포 가상머신 ip 정보 수집
