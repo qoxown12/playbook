@@ -1,7 +1,4 @@
 ---
-- name: debug list stdout
-  set_fact:
-    state: Running
 - name: State Httpd
   hosts: localhost
   gather_facts: no
@@ -70,7 +67,7 @@
         -ak ArfB-Y2r8LXfeWBmyNzpCgk1aOzg2s_O8PYXLX6uNRKg7lOWyd16nTshg4fsmEWs0dnEk8PIb0do0eczlysFpg \
         -sk g8Cghfff4Fc-n_iEYoHDJxnIv6sB0wJFx1CwtgEvBwJZw-W41Dblg7FA-oWN_EfO_C__f90STJDOPwlx3ftkUg \
         -gid {{ list_jsondata.listautomationdeployedresourceresponse.automationdeployedresource[0].id }} \
-        -s {{ state }}
+        -s {{ status }}
       register: result2
 
 
