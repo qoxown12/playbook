@@ -126,7 +126,7 @@
         -s "{{ mysqld_state_result.stdout }}"
 
     # 서비스 그룹 상태 업데이트
-    - name: update group
+    - name: update group active
       ansible.builtin.command: python2 /home/runner/mold_genie_api.py \
         -c updateDeployedResourceGroup \
         -ap http -ip "{{ lookup('env', 'MOLD_DEFAULT_URL') }}" -p "{{ lookup('env', 'MOLD_DEFAULT_PORT') }}" \
@@ -136,7 +136,7 @@
         -s "Active"
       when: httpd_state_result.stdout == 'active' and mysqld_state_result.stdout == 'active'
 
-    - name: update group
+    - name: update group inactive
       ansible.builtin.command: python2 /home/runner/mold_genie_api.py \
         -c updateDeployedResourceGroup \
         -ap http -ip "{{ lookup('env', 'MOLD_DEFAULT_URL') }}" -p "{{ lookup('env', 'MOLD_DEFAULT_PORT') }}" \
