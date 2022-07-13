@@ -25,3 +25,5 @@
         controller_host: "http://{{ genie_ip }}:80"
         controller_username: admin
         controller_password: "{{ admin_password.stdout }}"
+        extra_vars_path: 
+          - TEXT_VAL: 'gkgkgkgkgkgkjdfkjaklsdfsad'
