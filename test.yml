@@ -1,6 +1,6 @@
 ---
 - name: State Httpd
   hosts: localhost
-  task:
+  tasks:
     - name: echo test
       ansible.builtin.command: echo aaa
