@@ -26,4 +26,4 @@
         controller_username: admin
         controller_password: "{{ admin_password.stdout }}"
         extra_vars: 
-          - TEXT_VAL: 'gkgkgkgkgkgkjdfkjaklsdfsad'
+          TEXT_VAL: 'gkgkgkgkgkgkjdfkjaklsdfsad'
