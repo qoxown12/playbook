@@ -18,7 +18,7 @@
         job_type: "run"
         inventory: genie_inventory
         project: playbook_project
-        playbook: test.yml
+        playbook: /test.yml
         credentials:
           - "automation_controller_credential"
         state: "present"
