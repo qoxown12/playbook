@@ -3,4 +3,4 @@
   hosts: localhost
   tasks:
     - name: echo test
-      ansible.builtin.command: echo {{ TEXT_VAL}}
+      ansible.builtin.command: echo {{ TEXT_VAL }}
