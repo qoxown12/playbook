@@ -3,4 +3,4 @@
   hosts: localhost
   task:
     - name: echo test
-      ansible.builtin.command: echo {{ TEXT_LIST }}
+      ansible.builtin.command: echo aaa
