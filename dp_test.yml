@@ -17,8 +17,8 @@
         name: testttt
         job_type: "run"
         inventory: genie_inventory
-        project: playbook_project
-        playbook: /test.yml
+        project: tj
+        playbook: test.yml
         credentials:
           - "automation_controller_credential"
         state: "present"
