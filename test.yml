@@ -8,6 +8,7 @@
         definition:
           apiVersion: v1
           kind: Service
+          token: eyJhbGciOiJSUzI1NiIsImtpZCI6Ii1iS2pXQmFETnJJY2lWQ0l2OWgtWWp0UUUtcG93SEpVUGtfUFdITjFOb0EifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXNlY3JldCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJhZG1pbi11c2VyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiMTJhNjFhY2EtYWNlMi00YTUwLTg4ZWYtOGZjNTYzYzEyY2M3Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmVybmV0ZXMtZGFzaGJvYXJkOmFkbWluLXVzZXIifQ.Qlfa7yh7Qo8xqyrJCPk_lchPX4_z24mPPp5GnurbmVGKq5EXE_clxtR0Qgb9Lke70rgxjt5U_tq_ZbrYGfewV0a17wtg4pkfYqQbM70ock4wMwd8GcAonp19EwVZGGxAhVVgVHCUXY445zteClR5y3CVEbXrAmGrjz5AbDfYK3JZYLLNMHRHOxoM8c7V9rMLSDsJ4hM1u8JLQYjt_-W-L4fl2L8Stnk_EZLgsESKHhvIYxTQnUujPfncMDo9D7PYrLrhiRos_4sPN2gazgrlYmijDkuJPLF-9DYFjPNN7Nl3kQgaTI_K5Zi6w2ViLuFZ1nAPNy-8W6269PkRYaOukA
           metadata:
             name: web
             namespace: testing
